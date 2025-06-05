@@ -4,9 +4,18 @@
 
 OpenAI-compatible RESTful APIs for Amazon Bedrock
 
-## What's New 🔥
+## Fork Details 🌿
 
-This project supports reasoning for both **Claude 3.7 Sonnet** and **DeepSeek R1**, check [How to Use](./docs/Usage.md#reasoning) for more details. You need to first run the Models API to refresh the model list.
+The original seems more tailored for Lambda and Fargate, I just wanna pull and use on my own resources. 
+
+Environment-Based Credentials: The application now expects AWS credentials (ACCESS_KEY and SECRET_KEY) to be provided via environment variables. These are defined in src/api/setting.py and utilized in src/api/models/bedrock.py when initializing the Bedrock clients. 
+
+Automated Builds: On every push to the main branch, the workflow automatically:
+- Builds the Docker image using the updated src/Dockerfile.
+- Pushes the tagged Docker image to GHCR (available at ghcr.io/siestamode/bedrock-access-gateway:main).
+
+Standardized Environment: The src/Dockerfile has been revamped. It now uses python:3.12-slim as the base image. This replaces the previous AWS Lambda-specific base image.
+Web Server Execution: The application is configured to run as a web service using Uvicorn. It starts api.app:app on host 0.0.0.0 and exposes port 8000, making it ready for reverse proxy setups.
 
 ## Overview
 
