@@ -8,4 +8,4 @@ RUN pip3 install -r requirements.txt -U --no-cache-dir
 
 EXPOSE 8000
 
-CMD [ "api.app.handler" ]
+CMD ["uvicorn", "api.app:app", "--host", "0.0.0.0", "--port", "8000"]
