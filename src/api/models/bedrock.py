@@ -38,7 +38,7 @@ from api.schema import (
     Usage,
     UserMessage,
 )
-from api.setting import AWS_REGION, DEBUG, DEFAULT_MODEL, ENABLE_CROSS_REGION_INFERENCE, ACCESS_KEY, SECRET_KEY, SESSION_TOKEN
+from api.setting import AWS_REGION, DEBUG, DEFAULT_MODEL, ENABLE_CROSS_REGION_INFERENCE, ACCESS_KEY, SECRET_KEY
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +48,6 @@ bedrock_runtime = boto3.client(
     service_name="bedrock-runtime",
     aws_access_key_id=ACCESS_KEY, 
     aws_secret_access_key=SECRET_KEY, 
-    aws_session_token=SESSION_TOKEN,
     region_name=AWS_REGION,
     config=config,
 )
@@ -56,12 +55,8 @@ bedrock_client = boto3.client(
     service_name="bedrock",
     aws_access_key_id=ACCESS_KEY, 
     aws_secret_access_key=SECRET_KEY, 
-    aws_session_token=SESSION_TOKEN,
     region_name=AWS_REGION,
     config=config,
-    aws_access_key_id=ACCESS_KEY, 
-    aws_secret_access_key=SECRET_KEY, 
-    aws_session_token=SESSION_TOKEN,
 )
 
 def get_inference_region_prefix():
