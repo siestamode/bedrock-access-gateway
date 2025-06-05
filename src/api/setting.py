@@ -19,4 +19,3 @@ ENABLE_CROSS_REGION_INFERENCE = os.environ.get("ENABLE_CROSS_REGION_INFERENCE", 
 
 ACCESS_KEY = os.environ.get("ACCESS_KEY")
 SECRET_KEY = os.environ.get("SECRET_KEY")
-SESSION_TOKEN = os.environ.get("SESSION_TOKEN")
