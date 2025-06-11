@@ -1,8 +1,8 @@
 [中文](./README_CN.md)
 
-# Bedrock Access Gateway
+# Bedrock (Direct) Access Gateway
 
-OpenAI-compatible RESTful APIs for Amazon Bedrock
+OpenAI-compatible RESTful APIs for Amazon Bedrock, now on your own infrastructure!
 
 ## Fork Details 🌿
 
